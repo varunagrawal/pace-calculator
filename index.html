@@ -50,7 +50,7 @@
           cannot expect to run the equivalent marathon time based on 25 miles per week of training</li>
       </ul>
 
-      <div class="container text-center">
+      <div id="paceCalculatorContainer" class="container text-center">
         <div class="row">Pace Calculator</div>
         <div class="row">
           <div class="col">Select your distance</div>
@@ -86,313 +86,167 @@
         </div>
 
       </div>
-    </div>
 
+      <div class="trainingPaceContainer">
 
-
-      <br>
-      <div class="table-container">
-        <table id="trainingPaceTable" style="display: none;">
+        <table id="trainingPaceTable" class="table" style="display: none;">
           <thead>
             <tr class="odd">
-              <td>
-                Recommended Training Paces
-              </td>
-              <td colspan="2">
-                Pace Range (min/mile)
-              </td>
+              <td>Recommended Training Paces</td>
+              <td colspan="2">Pace Range (min/mile)</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
-                Moderate Effort
-              </td>
-              <td>
-                <text id="ModeratePaceMin">N/A</text>
-              </td>
-              <td>
-                <text id="ModeratePaceMax">N/A</text>
-              </td>
+              <td>Moderate Effort</td>
+              <td><text id="ModeratePaceMin">N/A</text></td>
+              <td><text id="ModeratePaceMax">N/A</text></td>
             </tr>
             <tr class="odd">
-              <td>
-                Easy Effort
-              </td>
-              <td>
-                <text id="EasyPaceMin">N/A</text>
-              </td>
-              <td>
-                <text id="EasyPaceMax">N/A</text>
-              </td>
+              <td>Easy Effort</td>
+              <td><text id="EasyPaceMin">N/A</text></td>
+              <td><text id="EasyPaceMax">N/A</text></td>
             </tr>
             <tr>
-              <td>
-                Recovery Effort
-              </td>
-              <td>
-                <text id="RecoveryPaceMin">N/A</text>
-              </td>
-              <td>
-                <text id="RecoveryPaceMax">N/A</text>
-              </td>
+              <td>Recovery Effort</td>
+              <td><text id="RecoveryPaceMin">N/A</text></td>
+              <td><text id="RecoveryPaceMax">N/A</text></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <br>
+
+      <div class="container">
+        <table id="intervalPaceTable" class="table" style="display: none;">
+          <thead>
+            <tr class="odd">
+              <td>Speedwork Intervals</td>
+              <td>Distance (miles)</td>
+              <td>Time</td>
+              <td>Pace (min/mile)</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mile</td>
+              <td>1.00</td>
+              <td><text id="MileIntervalTime">N/A</text></td>
+              <td><text id="MileIntervalPace">N/A</text></td>
+            </tr>
+            <tr class="odd">
+              <td>1200m</td>
+              <td>0.75</td>
+              <td><text id="TwelveHundredIntervalTime">N/A</text></td>
+              <td><text id="TwelveHundredIntervalPace">N/A</text></td>
+            </tr>
+            <tr>
+              <td>1000m</td>
+              <td>0.62</td>
+              <td><text id="ThousandIntervalTime">N/A</text></td>
+              <td><text id="ThousandIntervalPace">N/A</text></td>
+            </tr>
+            <tr class="odd">
+              <td>800m</td>
+              <td>0.50</td>
+              <td><text id="EightHundredIntervalTime">N/A</text></td>
+              <td><text id="EightHundredIntervalPace">N/A</text></td>
+            </tr>
+            <tr>
+              <td>600m</td>
+              <td>0.37</td>
+              <td><text id="SixHundredIntervalTime">N/A</text></td>
+              <td><text id="SixHundredIntervalPace">N/A</text></td>
+            </tr>
+            <tr class="odd">
+              <td>400m</td>
+              <td>0.25</td>
+              <td><text id="FourHundredIntervalTime">N/A</text></td>
+              <td><text id="FourHundredIntervalPace">N/A</text></td>
+            </tr>
+            <tr>
+              <td>300m</td>
+              <td>0.19</td>
+              <td><text id="ThreeHundredIntervalTime">N/A</text></td>
+              <td><text id="ThreeHundredIntervalPace">N/A</text></td>
+            </tr>
+            <tr class="odd">
+              <td>200m</td>
+              <td>0.12</td>
+              <td><text id="TwoHundredIntervalTime">N/A</text></td>
+              <td><text id="TwoHundredIntervalPace">N/A</text></td>
             </tr>
           </tbody>
         </table>
       </div>
+
       <br>
-      <div class="table-container">
-        <table id="intervalPaceTable" style="display: none;">
+
+      <div class="container">
+        <table id="raceTimeTable" class="table" style="display: none;">
           <thead>
             <tr class="odd">
-              <td>
-                Speedwork Intervals
-              </td>
-              <td>
-                Distance (miles)
-              </td>
-              <td>
-                Time
-              </td>
-              <td>
-                Pace (min/mile)
-              </td>
+              <td>Projected Race Times</td>
+              <td>Distance (miles)</td>
+              <td>Time</td>
+              <td>Pace (min/mile)</td>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>
-                Mile
-              </td>
-              <td>
-                1.00
-              </td>
-              <td>
-                <text id="MileIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="MileIntervalPace">N/A</text>
-              </td>
+              <td>1 Mile</td>
+              <td>1.00</td>
+              <td><text id="MileRaceTime">N/A</text></td>
+              <td><text id="MileRacePace">N/A</text></td>
             </tr>
             <tr class="odd">
-              <td>
-                1200m
-              </td>
-              <td>
-                0.75
-              </td>
-              <td>
-                <text id="TwelveHundredIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="TwelveHundredIntervalPace">N/A</text>
-              </td>
+              <td>3k</td>
+              <td>1.87</td>
+              <td><text id="3kRaceTime">N/A</text></td>
+              <td><text id="3kRacePace">N/A</text></td>
             </tr>
             <tr>
-              <td>
-                1000m
-              </td>
-              <td>
-                0.62
-              </td>
-              <td>
-                <text id="ThousandIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="ThousandIntervalPace">N/A</text>
-              </td>
+              <td>5k</td>
+              <td>3.10</td>
+              <td><text id="5kRaceTime">N/A</text></td>
+              <td><text id="5kRacePace">N/A</text></td>
             </tr>
             <tr class="odd">
-              <td>
-                800m
-              </td>
-              <td>
-                0.50
-              </td>
-              <td>
-                <text id="EightHundredIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="EightHundredIntervalPace">N/A</text>
-              </td>
+              <td>10k</td>
+              <td>6.20</td>
+              <td><text id="10kRaceTime">N/A</text></td>
+              <td><text id="10kRacePace">N/A</text></td>
             </tr>
             <tr>
-              <td>
-                600m
-              </td>
-              <td>
-                0.37
-              </td>
-              <td>
-                <text id="SixHundredIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="SixHundredIntervalPace">N/A</text>
-              </td>
+              <td>Half Marathon</td>
+              <td>13.1</td>
+              <td><text id="HalfRaceTime">N/A</text></td>
+              <td><text id="HalfRacePace">N/A</text></td>
             </tr>
             <tr class="odd">
-              <td>
-                400m
-              </td>
-              <td>
-                0.25
-              </td>
-              <td>
-                <text id="FourHundredIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="FourHundredIntervalPace">N/A</text>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                300m
-              </td>
-              <td>
-                0.19
-              </td>
-              <td>
-                <text id="ThreeHundredIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="ThreeHundredIntervalPace">N/A</text>
-              </td>
-            </tr>
-            <tr class="odd">
-              <td>
-                200m
-              </td>
-              <td>
-                0.12
-              </td>
-              <td>
-                <text id="TwoHundredIntervalTime">N/A</text>
-              </td>
-              <td>
-                <text id="TwoHundredIntervalPace">N/A</text>
-              </td>
+              <td>Marathon</td>
+              <td>26.2</td>
+              <td><text id="FullRaceTime">N/A</text></td>
+              <td><text id="FullRacePace">N/A</text></td>
             </tr>
           </tbody>
         </table>
-      </div>
-      <br>
-      <div class="table-container">
-        <table id="raceTimeTable" style="display: none;">
-          <thead>
-            <tr class="odd">
-              <td>
-                Projected Race Times
-              </td>
-              <td>
-                Distance (miles)
-              </td>
-              <td>
-                Time
-              </td>
-              <td>
-                Pace (min/mile)
-              </td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                1 Mile
-              </td>
-              <td>
-                1.00
-              </td>
-              <td>
-                <text id="MileRaceTime">N/A</text>
-              </td>
-              <td>
-                <text id="MileRacePace">N/A</text>
-              </td>
-            </tr>
-            <tr class="odd">
-              <td>
-                3k
-              </td>
-              <td>
-                1.87
-              </td>
-              <td>
-                <text id="3kRaceTime">N/A</text>
-              </td>
-              <td>
-                <text id="3kRacePace">N/A</text>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                5k
-              </td>
-              <td>
-                3.10
-              </td>
-              <td>
-                <text id="5kRaceTime">N/A</text>
-              </td>
-              <td>
-                <text id="5kRacePace">N/A</text>
-              </td>
-            </tr>
-            <tr class="odd">
-              <td>
-                10k
-              </td>
-              <td>
-                6.20
-              </td>
-              <td>
-                <text id="10kRaceTime">N/A</text>
-              </td>
-              <td>
-                <text id="10kRacePace">N/A</text>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Half Marathon
-              </td>
-              <td>
-                13.1
-              </td>
-              <td>
-                <text id="HalfRaceTime">N/A</text>
-              </td>
-              <td>
-                <text id="HalfRacePace">N/A</text>
-              </td>
-            </tr>
-            <tr class="odd">
-              <td>
-                Marathon
-              </td>
-              <td>
-                26.2
-              </td>
-              <td>
-                <text id="FullRaceTime">N/A</text>
-              </td>
-              <td>
-                <text id="FullRacePace">N/A</text>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+      integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"></script>
 
     <!-- Custom code -->
-     <script src="code.js"></script>
+    <script src="code.js"></script>
 
   </body>
 
