@@ -76,7 +76,6 @@ $(document).ready(function () {
 });
 
 function TimeCalculations() {
-  console.log("whooop");
   var seconds = 0;
   var hours = $("#hours").val();
   var minutes = $("#minutes").val();
