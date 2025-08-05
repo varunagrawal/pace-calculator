@@ -26,6 +26,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
+    <!-- Custom code -->
+    <script src="code.js"></script>
+
   </head>
 
   <body>
@@ -64,9 +67,9 @@
                 <td>
                   <select id="distance">
                     <option value="Mile">One Mile</option>
-                    <option value="3k">3k Indicator</option>
-                    <option value="5k">5k</option>
-                    <option value="10k">10k</option>
+                    <option value="3k">3K Indicator</option>
+                    <option value="5k">5K</option>
+                    <option value="10k">10K</option>
                     <option value="Half Marathon">Half Marathon
                     </option>
                   </select>
@@ -75,16 +78,20 @@
               <tr>
                 <td>Enter your time</td>
                 <td>
-                  <input id="hours" type="number" min="0" max="9" placeholder="Hours">
+                  <input id="hours" style="width: 70px;" type="number" min="0" max="9" placeholder="Hours">
                   &nbsp;:&nbsp;
-                  <input id="minutes" type="number" min="0" max="60" placeholder="Minutes">
+                  <input id="minutes" style="width: 70px;" type="number" min="0" max="60" placeholder="Minutes">
                   &nbsp;:&nbsp;
-                  <input id="seconds" type="number" min="0" max="60" placeholder="Seconds">
+                  <input id="seconds" style="width: 70px;" type="number" min="0" max="60" placeholder="Seconds">
                 </td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
                 <td>Time format example using One Mile distance: 0:06:14</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><button type="button" class="btn btn-primary" onclick="calculateTimes();">Calculate!</button></td>
               </tr>
             </tbody>
           </table>
@@ -264,9 +271,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"></script>
-
-    <!-- Custom code -->
-    <script src="code.js"></script>
 
   </body>
 
