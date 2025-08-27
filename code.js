@@ -4,9 +4,11 @@ function calculateTimes() {
   $('#trainingPaceTable').hide();
 
   var seconds = 0;
-  var hours = $("#hours").val();
-  var minutes = $("#minutes").val();
-  var secondsTemp = $("#seconds").val();
+
+  // Get the values, default to 0 if empty
+  var hours = $("#hours").val() || 0;
+  var minutes = $("#minutes").val() || 0;
+  var secondsTemp = $("#seconds"  ).val() || 0;
   seconds = (parseInt(hours) * 3600) + (parseInt(minutes) * 60) + (parseInt(secondsTemp));
   var event = $('#distance').val();
   if (event == "Mile") {
